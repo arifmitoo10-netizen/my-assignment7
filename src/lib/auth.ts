@@ -28,9 +28,14 @@ const socialProviders = {
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://my-assignment7.vercel.app",
+  ],
+
   emailAndPassword: {
     enabled: true,
-    autoSignIn: false, // after sign up the user is sent to the sign-in page
+    autoSignIn: false,
   },
   socialProviders,
 });
