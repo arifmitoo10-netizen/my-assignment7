@@ -41,10 +41,9 @@
 // });
 
 
-
 import { betterAuth } from "better-auth";
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import { db } from "./mongodb";
+import { mongodbAdapter } from "@better-auth/mongo-adapter";
+import { db, client } from "./mongodb";
 
 const socialProviders = {
   ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
@@ -66,7 +65,7 @@ const socialProviders = {
 };
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db),
+  database: mongodbAdapter(db, { client }),
 
   trustedOrigins: [
     "http://localhost:3000",
