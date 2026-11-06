@@ -44,6 +44,12 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 import { db, client } from "./mongodb";
+import { MongoClient } from "mongodb";
+
+
+const client = new MongoClient (process.env.MONGODB_URL as string);
+const db = client.db("my-assignment7");
+
 
 const socialProviders = {
   ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
