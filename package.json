@@ -8,9 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "better-auth": "latest",
+    "@better-auth/mongo-adapter": "^1.7.18",
+    "better-auth": "^1.7.18",
     "lucide-react": "^0.462.0",
-    "mongodb": "^6.12.0",
+    "mongodb": "^6.22.0",
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
